@@ -17,6 +17,12 @@ function Chat() {
     const messageEndRef = useRef(null);
     const [quantity, setQuantity] = useState(0); // Initialize with a default value of 1
 
+
+  function handleOrderButtor(){
+    setQuantity(0)
+    setShowPopup(!showPopup)
+    sendMessage()
+  }
   // Function to increment the quantity
   const handleAdd = () => {
     setQuantity(prevQuantity => prevQuantity + 1);
@@ -32,9 +38,14 @@ function Chat() {
     // Function to send messages
     const sendMessage = () => {
         if (message !== "") {
+          const orderdetails = {
+            food:message,
+            quantity
+          }
             const messageData = {
                 type: "text",
                 from: "human",
+                orderdetails,
                 message,
                 time: new Date(Date.now()).toLocaleTimeString(),
             };
@@ -66,9 +77,9 @@ function Chat() {
         socket.on('receive_message', handleReceiveMessage);
 
         // Cleanup function to remove listener
-        return () => {
-            socket.off('receive_message', handleReceiveMessage);
-        };
+        // return () => {
+        //     socket.off('receive_message', handleReceiveMessage);
+        // };
     }, []);
 
     // Scroll to the bottom when new messages are added
@@ -85,6 +96,7 @@ function Chat() {
     const handleMenuItemClick = (item) => {
         setMessage(item); // Set the selected menu item as the message
         setDrawerOpen(false); // Close the drawer
+     
     };
 
     return (
@@ -153,7 +165,10 @@ function Chat() {
                 <Button
                   variant="contained"
                   color="primary"
-                  onClick={() => setShowPopup(false)}
+                  onClick={() => {
+                    setShowPopup(false)
+                    setQuantity(0)
+                  }}
                   sx={{
                     position: 'absolute',
                     top: '10px',    // Positioning at the top
@@ -173,6 +188,10 @@ function Chat() {
                   <Button variant="contained" onClick={handleAdd}>
                     +
                   </Button>
+                </Box>
+                <Typography>{message}</Typography>
+                <Box>
+                  <Button onClick={handleOrderButtor}>Order</Button>
                 </Box>
               </Paper>              
             )}
