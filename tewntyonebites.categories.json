@@ -1,0 +1,56 @@
+[{
+  "_id": {
+    "$oid": "66fd5d268c0ec903eb9b6a0c"
+  },
+  "name": "Burger",
+  "available": "True",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66fd5de055e1cbb55cb51f6b"
+  },
+  "name": "Juice",
+  "available": "True",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66fd5de855e1cbb55cb51f6e"
+  },
+  "name": "Rolls",
+  "available": "True",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66fd5f3855e1cbb55cb51f71"
+  },
+  "name": "Fries",
+  "available": "True",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66fd5f6f55e1cbb55cb51f74"
+  },
+  "name": "Sandwich",
+  "available": "True",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66fd639455e1cbb55cb51f77"
+  },
+  "name": "Milkshakes",
+  "available": "True",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67023de542d97eab5100e11e"
+  },
+  "name": "Momos",
+  "available": "True",
+  "__v": 0
+}]

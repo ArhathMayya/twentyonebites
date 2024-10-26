@@ -1,0 +1,392 @@
+[{
+  "_id": {
+    "$oid": "67025933754429dbe83b2143"
+  },
+  "name": "Cheese Burger",
+  "category": "Burger",
+  "price": {
+    "$numberDecimal": "6.99"
+  },
+  "image": "",
+  "description": "Delicious burger with extra cheese",
+  "available": "true",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67025933754429dbe83b2144"
+  },
+  "name": "Veggie Burger",
+  "category": "Burger",
+  "price": {
+    "$numberDecimal": "5.49"
+  },
+  "image": "",
+  "description": "Healthy burger made from fresh vegetables",
+  "available": "true",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67025933754429dbe83b2145"
+  },
+  "name": "Chicken Burger",
+  "category": "Burger",
+  "price": {
+    "$numberDecimal": "7.99"
+  },
+  "image": "",
+  "description": "Crispy chicken patty with lettuce and tomato",
+  "available": "true",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67025933754429dbe83b2146"
+  },
+  "name": "Egg Burger",
+  "category": "Burger",
+  "price": {
+    "$numberDecimal": "8.49"
+  },
+  "image": "",
+  "description": "Juicy beef burger with a side of fries",
+  "available": "true",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6702596b754429dbe83b214c"
+  },
+  "name": "Orange Juice",
+  "category": "Juice",
+  "price": {
+    "$numberDecimal": "2.99"
+  },
+  "image": "",
+  "description": "Freshly squeezed orange juice",
+  "available": "true",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6702596b754429dbe83b214d"
+  },
+  "name": "Apple Juice",
+  "category": "Juice",
+  "price": {
+    "$numberDecimal": "3.49"
+  },
+  "image": "",
+  "description": "Freshly pressed apple juice",
+  "available": "true",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6702596b754429dbe83b214e"
+  },
+  "name": "Pineapple Juice",
+  "category": "Juice",
+  "price": {
+    "$numberDecimal": "3.99"
+  },
+  "image": "",
+  "description": "Refreshing pineapple juice",
+  "available": "true",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6702596b754429dbe83b214f"
+  },
+  "name": "Mango Juice",
+  "category": "Juice",
+  "price": {
+    "$numberDecimal": "3.99"
+  },
+  "image": "",
+  "description": "Sweet and tangy mango juice",
+  "available": "true",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67025980754429dbe83b2155"
+  },
+  "name": "Chicken Roll",
+  "category": "Rolls",
+  "price": {
+    "$numberDecimal": "4.99"
+  },
+  "image": "",
+  "description": "Spicy chicken wrapped in a roll",
+  "available": "true",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67025980754429dbe83b2156"
+  },
+  "name": "Paneer Roll",
+  "category": "Rolls",
+  "price": {
+    "$numberDecimal": "4.49"
+  },
+  "image": "",
+  "description": "Delicious paneer wrapped in a roll",
+  "available": "true",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67025980754429dbe83b2157"
+  },
+  "name": "Egg Roll",
+  "category": "Rolls",
+  "price": {
+    "$numberDecimal": "3.99"
+  },
+  "image": "",
+  "description": "Egg roll with spices and veggies",
+  "available": "true",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67025980754429dbe83b2158"
+  },
+  "name": "Mutton Roll",
+  "category": "Rolls",
+  "price": {
+    "$numberDecimal": "5.99"
+  },
+  "image": "",
+  "description": "Mutton kebab roll with spicy chutney",
+  "available": "true",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67025992754429dbe83b215e"
+  },
+  "name": "French Fries",
+  "category": "Fries",
+  "price": {
+    "$numberDecimal": "1.99"
+  },
+  "image": "",
+  "description": "Crispy golden french fries",
+  "available": "true",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67025992754429dbe83b215f"
+  },
+  "name": "Curly Fries",
+  "category": "Fries",
+  "price": {
+    "$numberDecimal": "2.49"
+  },
+  "image": "",
+  "description": "Seasoned curly fries",
+  "available": "true",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67025992754429dbe83b2160"
+  },
+  "name": "Sweet Potato Fries",
+  "category": "Fries",
+  "price": {
+    "$numberDecimal": "2.99"
+  },
+  "image": "",
+  "description": "Healthy sweet potato fries",
+  "available": "true",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67025992754429dbe83b2161"
+  },
+  "name": "Cheese Fries",
+  "category": "Fries",
+  "price": {
+    "$numberDecimal": "3.49"
+  },
+  "image": "",
+  "description": "Fries topped with melted cheese",
+  "available": "true",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670259ac754429dbe83b2167"
+  },
+  "name": "Club Sandwich",
+  "category": "Sandwich",
+  "price": {
+    "$numberDecimal": "3.99"
+  },
+  "image": "",
+  "description": "Double-decker club sandwich",
+  "available": "true",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670259ac754429dbe83b2168"
+  },
+  "name": "Grilled Cheese Sandwich",
+  "category": "Sandwich",
+  "price": {
+    "$numberDecimal": "2.99"
+  },
+  "image": "",
+  "description": "Classic grilled cheese sandwich",
+  "available": "true",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670259ac754429dbe83b2169"
+  },
+  "name": "Chicken Sandwich",
+  "category": "Sandwich",
+  "price": {
+    "$numberDecimal": "4.49"
+  },
+  "image": "",
+  "description": "Grilled chicken sandwich with veggies",
+  "available": "true",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670259ac754429dbe83b216a"
+  },
+  "name": "Veggie Sandwich",
+  "category": "Sandwich",
+  "price": {
+    "$numberDecimal": "3.49"
+  },
+  "image": "",
+  "description": "Healthy veggie sandwich with hummus",
+  "available": "true",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670259c4754429dbe83b2170"
+  },
+  "name": "Chocolate Milkshake",
+  "category": "Milkshakes",
+  "price": {
+    "$numberDecimal": "3.99"
+  },
+  "image": "",
+  "description": "Rich and creamy chocolate milkshake",
+  "available": "true",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670259c4754429dbe83b2171"
+  },
+  "name": "Strawberry Milkshake",
+  "category": "Milkshakes",
+  "price": {
+    "$numberDecimal": "3.49"
+  },
+  "image": "",
+  "description": "Fresh strawberry milkshake",
+  "available": "true",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670259c4754429dbe83b2172"
+  },
+  "name": "Vanilla Milkshake",
+  "category": "Milkshakes",
+  "price": {
+    "$numberDecimal": "3.49"
+  },
+  "image": "",
+  "description": "Classic vanilla milkshake",
+  "available": "true",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670259c4754429dbe83b2173"
+  },
+  "name": "Oreo Milkshake",
+  "category": "Milkshakes",
+  "price": {
+    "$numberDecimal": "4.49"
+  },
+  "image": "",
+  "description": "Creamy Oreo milkshake with crushed cookies",
+  "available": "true",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670259e9754429dbe83b2179"
+  },
+  "name": "Steamed Chicken Momos",
+  "category": "Momos",
+  "price": {
+    "$numberDecimal": "4.99"
+  },
+  "image": "",
+  "description": "Soft steamed momos stuffed with chicken",
+  "available": "true",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670259e9754429dbe83b217a"
+  },
+  "name": "Veg Momos",
+  "category": "Momos",
+  "price": {
+    "$numberDecimal": "4.49"
+  },
+  "image": "",
+  "description": "Steamed veg momos stuffed with fresh vegetables",
+  "available": "true",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670259e9754429dbe83b217b"
+  },
+  "name": "Fried Chicken Momos",
+  "category": "Momos",
+  "price": {
+    "$numberDecimal": "5.49"
+  },
+  "image": "",
+  "description": "Crispy fried momos with spicy chicken filling",
+  "available": "true",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "670259e9754429dbe83b217c"
+  },
+  "name": "Paneer Momos",
+  "category": "Momos",
+  "price": {
+    "$numberDecimal": "4.99"
+  },
+  "image": "",
+  "description": "Steamed momos stuffed with paneer",
+  "available": "true",
+  "__v": 0
+}]
