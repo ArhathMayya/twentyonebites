@@ -39,3 +39,4 @@ server.listen(4000, () => {
 
 // Routes
 app.use('/21bites', require('./routes/foodroutes'));
+app.use('/21bites/auth', require('./routes/authRoutes'))
