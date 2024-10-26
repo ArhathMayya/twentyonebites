@@ -1,3 +1,18 @@
+:root {
+  --primary-color: #3f74b9;   /* Blue */
+  --secondary-color: #2ecc71; /* Green */
+  --accent-color: #e74c3c;    /* Red */
+  --text-color: #ffffff;          /* Dark Gray */
+
+  /* bot msg color */
+  --bot-text-background-color: #3f74b9;   /* Blue */
+  --bot-text-color:#f8f3f3;
+
+  /* human msg color */
+  --bot-human-background-color: #cbcbcb;   /* Blue */
+  --bot-human-color:#111111;
+}
+
 .App {
   text-align: center;
 }
@@ -39,7 +54,7 @@
 
 .App {
   text-align: center;
-  margin-top: 50px;
+  /* margin-top: 50px; */
 }
 
 .chat-window {
