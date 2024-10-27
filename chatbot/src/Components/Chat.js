@@ -57,6 +57,25 @@ function Chat() {
 
   // Initial message setup
   useEffect(() => {
+    const query = window.location.search;
+
+    // Initialize URLSearchParams with the query string
+    const params = new URLSearchParams(query);
+
+    // Get the "table" parameter value
+    const table = params.get("table");
+
+    // Get the "phonenumber" parameter value
+    const phoneNumber = params.get("phonenumber");
+
+    if (table && phoneNumber) {
+      console.log('Table:', table);          // Outputs: "3"
+      console.log('Phone Number:', phoneNumber); // Outputs: "9535342324"
+
+      // Perform additional logic if needed
+    } else {
+      console.log('Required query values not found.');
+    }
     const initialMessageData = {
       type: "text",
       from: "bot",
