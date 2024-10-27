@@ -1,5 +1,5 @@
-import React from 'react';
-import { Box, Typography } from '@mui/material';
+import React, { useState } from 'react';
+import { Box, Typography, Button } from '@mui/material';
 import { styled } from '@mui/system';
 
 const BotMessage = styled(Box)(({ theme }) => ({
@@ -12,20 +12,42 @@ const BotMessage = styled(Box)(({ theme }) => ({
     boxShadow: '0px 2px 3px rgba(0, 0, 0, 0.1)',
 }));
 
+export const DisplayIndividualOrder = ({ index, food, quantity }) => {
+    const [displayPrepareButton, setDisplayButton] = useState(false);
+    const [foodPrepareButton, setFoodPrepareButton] = useState(false);
 
-export const DisplayIndividualOrder = ({food, Quantity}) => {
+    const handleStartCookingButton = (index, food, quantity) => {
+        setDisplayButton(true);
+        console.log(`${food} of quantity ${quantity} started to prepare`);
+    };
+
+    const handlePrepareButton = (index, food, quantity) => {
+        console.log(`${food} of quantity ${quantity} prepared`);
+        setFoodPrepareButton(true); // Disable the button after clicking
+    };
+
     return (
-        <Box
-            display="flex"
-            // justifyContent={from === 'bot' ? 'flex-start' : 'flex-end'}  // Align messages left for bot, right for human
-        >
-           
-                <BotMessage>
-                    <Typography variant="body2">{food}</Typography>
-                    <Typography variant="body2">Qunatity: {Quantity}</Typography>
-                    {/* <MessageTime variant="caption">{time}</MessageTime> */}
-                </BotMessage>
-           
+        <Box display="flex">
+            <BotMessage>
+                <Typography variant="body2">{food}</Typography>
+                <Typography variant="body2">Quantity: {quantity}</Typography>
+            </BotMessage>
+
+            {/* Display "Start Cooking" initially, and switch to "Food Prepared" once cooking starts */}
+            {!displayPrepareButton ? (
+                <Button variant="contained" onClick={() => handleStartCookingButton(index, food, quantity)}>
+                    Start Cooking
+                </Button>
+            ) : (
+                <Button
+                    variant="contained"
+                    disabled={foodPrepareButton} // Disables button if foodPrepareButton is true
+                    onClick={() => handlePrepareButton(index, food, quantity)}
+                >
+                    Food Prepared
+                </Button>
+            )}
+            {foodPrepareButton && (<Button>Close</Button>)}
         </Box>
     );
 };

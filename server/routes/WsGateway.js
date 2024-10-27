@@ -1,7 +1,10 @@
+const { initialHandler } = require('../handlers/initialHandlers');
 const { CategoryModel, FoodModel } = require('./../models');
+
 
 function WsGateway(socket, io) {
     // Notify when a new kitchen client connects
+    initialHandler(socket)
     socket.on('kitchen', (data) => {
         console.log("Kitchen: ", data);
     });

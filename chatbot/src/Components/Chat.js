@@ -4,6 +4,7 @@ import MessageDefination from "./MessageDefinitions";
 import { Box, TextField, Typography, Button, Grid, Paper } from "@mui/material";
 import Menu from "./Menu";
 import SearchAppBar from "./Navbar";
+import sendInitialData from './helperComonents/sendInitialData'
 
 export const socket = io.connect("http://localhost:4000", {
   secure: true,
@@ -71,6 +72,7 @@ function Chat() {
     if (table && phoneNumber) {
       console.log('Table:', table);          // Outputs: "3"
       console.log('Phone Number:', phoneNumber); // Outputs: "9535342324"
+      sendInitialData(socket, table, phoneNumber)
 
       // Perform additional logic if needed
     } else {

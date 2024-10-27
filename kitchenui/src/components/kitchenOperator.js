@@ -21,12 +21,14 @@ export default function KitchenOperator() {
             socket.off('preparefood');
         };
     }, []);
+    
 
     return (
         <>
             {foods.map((food, index) => (
                 <Box key={index}>
-                    <DisplayIndividualOrder food={food.food} Quantity={food.quantity} />
+                    <DisplayIndividualOrder index ={index}food={food.food} quantity={food.quantity} />
+                    
                 </Box>
             ))}
         </>
