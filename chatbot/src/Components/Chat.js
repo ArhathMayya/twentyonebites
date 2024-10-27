@@ -82,17 +82,17 @@ function Chat() {
     // };
   }, []);
 
-<<<<<<< HEAD
+
         // Event listener for receiving messageshandleReceiveMessage
         const handleReceiveMessage = (data) => {
             setMessageList((list) => [...list, data]);
         };
-=======
+
   // Scroll to the bottom when new messages are added
   useEffect(() => {
     messageEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messageList]);
->>>>>>> 159e96b4d9540e3a019f80444fce874186590ee6
+
 
   // Function to toggle the drawer
   const toggleDrawer = (open) => () => {
