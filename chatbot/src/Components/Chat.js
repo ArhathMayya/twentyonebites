@@ -68,7 +68,7 @@ function Chat() {
         // Request menu data on component mount
         socket.emit('getfoodinfo', { message: "getmenu" });
 
-        // Event listener for receiving messages
+        // Event listener for receiving messageshandleReceiveMessage
         const handleReceiveMessage = (data) => {
             setMessageList((list) => [...list, data]);
         };

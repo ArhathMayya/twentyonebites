@@ -1,53 +1,47 @@
-const {CategoryModel, FoodModel} = require('./../models')
+const { CategoryModel, FoodModel } = require('./../models');
 
 function WsGateway(socket, io) {
-    // Remove any previously attached listeners to avoid duplicate logs
-    // socket.removeAllListeners('send_message');
-    
+    // Notify when a new kitchen client connects
+    socket.on('kitchen', (data) => {
+        console.log("Kitchen: ", data);
+    });
 
+    // Handle message sending
     socket.on('send_message', (data) => {
-        console.log('Received message: ', data);
+        console.log('Received message:', data);
+        
+        // Response from bot
         const returnData = {
             type: "text",
             from: "bot",
             message: "yoooooo",
-            time: new Date(Date.now()).toLocaleTimeString(),
+            time: new Date().toLocaleTimeString(),
         };
+
         io.emit('receive_message', returnData);
+        console.log("Emitting preparefood with data:", data.orderdetails);
+        io.emit('preparefood', data.orderdetails);
+
     });
 
-    socket.on('disconnect', () => {
-        console.log('User disconnected: ', socket.id);
-    });
+    // Cleanup and listener for retrieving food information
     socket.removeAllListeners('getfoodinfo');
-    socket.on('getfoodinfo', async (data) => {
-        let model = CategoryModel;
-        const results = await model.find({ 'available': 'True' });
-        const response = results.map((result) => result.name);
-        socket.emit('menu', { response });
-        console.log(response);
+    socket.on('getfoodinfo', async () => {
+        try {
+            const results = await CategoryModel.find({ available: 'True' });
+            const response = results.map((result) => result.name);
+            socket.emit('menu', { response });
+            console.log('Categories available:', response);
+        } catch (err) {
+            console.error('Error fetching food info:', err);
+            socket.emit('error', { message: 'Error fetching food info', error: err.message });
+        }
     });
 
-    // socket.on('getsubmenu', async (data) => {
-    //     try {
-    //         console.log(data.message);
-            
-    //         // Fetch all food items under the specified category
-    //         const results = await FoodModel.find({ 'category': data.message });
-    //         console.log(results);
-    
-    //         // If the intent is to return only the name of the items, map over the results
-    //         const response = results
-    //         .filter(res => res.available === 'True')  // Filter only those with available === 'True'
-    //         .map(res => res.name);  //
-    
-    //         // Emit the filtered response back to the client
-    //         socket.emit('submenu', { items: response });
-    //     } catch (err) {
-    //         console.error('Error while fetching submenus:', err);
-    //         socket.emit('error', { message: 'Error while fetching submenus', error: err.message });
-    //     }
-    // });
+    // Notify when a user disconnects
+    socket.on('disconnect', () => {
+        console.log('User disconnected:', socket.id);
+    });
 }
 
 module.exports = WsGateway;
