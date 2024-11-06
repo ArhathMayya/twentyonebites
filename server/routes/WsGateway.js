@@ -1,7 +1,15 @@
 const { initialHandler } = require('../handlers/initialHandlers');
 const { CategoryModel, FoodModel } = require('./../models');
 
+function generateRandomId(){
+    result = 'foodID_'
+    chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
+    for(let i = 0; i < 10; i++){
+        result += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    return result
 
+}
 function WsGateway(socket, io) {
     // Notify when a new kitchen client connects
     initialHandler(socket)
@@ -23,6 +31,7 @@ function WsGateway(socket, io) {
 
         io.emit('receive_message', returnData);
         console.log("Emitting preparefood with data:", data.orderdetails);
+        data.orderdetails.id = generateRandomId();
         io.emit('preparefood', data.orderdetails);
 
     });
@@ -40,6 +49,14 @@ function WsGateway(socket, io) {
             socket.emit('error', { message: 'Error fetching food info', error: err.message });
         }
     });
+
+    socket.on('startcooking', (data)=>{
+        console.log("Start Cooking of: ", data)
+    })
+
+    socket.on('foodprepared', (data)=>{
+        console.log("Food preparation completed: ", data)
+    })
 
     // Notify when a user disconnects
     socket.on('disconnect', () => {

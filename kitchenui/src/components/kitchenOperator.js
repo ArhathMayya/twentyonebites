@@ -7,28 +7,33 @@ export default function KitchenOperator() {
     const [foods, setFoods] = useState([]);
 
     useEffect(() => {
-        // Notify server that kitchen has joined
         socket.emit('kitchen', { message: 'kitchen joined' });
 
-        // Listen for 'preparefood' event to receive food items
         socket.on('preparefood', (data) => {
-            console.log("data: ", data);
+            // const newFoodItem = { ...data, id: Date.now() + Math.random() }; // Unique ID
             setFoods((list) => [...list, data]);
         });
 
-        // Cleanup the socket listener on component unmount
         return () => {
             socket.off('preparefood');
         };
     }, []);
-    
+
+    const removeFoodItem = (id) => {
+        setFoods((prevFoods) => prevFoods.filter((food) => food.id !== id));
+    };
 
     return (
         <>
-            {foods.map((food, index) => (
-                <Box key={index}>
-                    <DisplayIndividualOrder index ={index}food={food.food} quantity={food.quantity} />
-                    
+            {foods.map((food) => (
+                <Box key={food.id}>
+                    <DisplayIndividualOrder 
+                        id={food.id} 
+                        food={food.food} 
+                        quantity={food.quantity} 
+                        removeFoodItem={removeFoodItem} 
+                        socket={socket}
+                    />
                 </Box>
             ))}
         </>
